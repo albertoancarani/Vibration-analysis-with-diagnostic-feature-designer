@@ -1,10 +1,8 @@
-% Carica il file .mat
 load('matlab_FEATURE TABLE.mat');
 
 % Parametro per il numero di picchi da considerare
 numPeaksToConsider = 50; % Modifica questo valore per aumentare o diminuire il numero di picchi
 
-% Verifica se la variabile FeatureTable1 esiste
 if exist('FeatureTable1', 'var')
     % Estrai i valori della kurtosis
     kurtosisValues = FeatureTable1.('FRM_1/Signal_tsa_rotmac/Kurtosis');
@@ -85,7 +83,6 @@ if exist('FeatureTable1', 'var')
         fprintf('Il Remaining Useful Life (RUL) è di circa %.2f secondi.\n', RUL);
     end
 
-    % Plot dei valori della kurtosis, dell'inviluppo dei massimi e della proiezione futura
     futureTime = (1:length(kurtosisValues))';
     futureTimeSeconds = futureTime * timePerSample;
     extendedTimeSeconds = (length(kurtosisValues)+1:timeToThreshold)' * timePerSample;

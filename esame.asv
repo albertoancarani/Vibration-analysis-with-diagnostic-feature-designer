@@ -1,0 +1,24 @@
+clc
+clear
+% 1) carico i dati nel workspace
+load(fullfile(matlabroot, 'toolbox', 'predmaint', 'predmaintdemos', ...
+  'motorDrivetrainDiagnosis', 'machineDataRUL3'), 'motor_rul3')
+diagnosticFeatureDesigner
+
+% 2) apro il diagnostic feature designer
+
+% 3) Import the data. To do so, in the Feature Designer tab, click New Session. 
+% Then, in the Select more variables area of the New Session window,
+% select motor_rul3 as your source variable.
+
+% 4) selezione la variabile e la plotto usando signal trace
+
+% 5) segmento il segnale
+% clicco su frame policy poi dentro la finestra che si apre metto data
+% handling mondel su frame based poi imposto sia il frame size che il frame
+% rare a 0.2
+% Click Computation Options. In the dialog box, 
+% set Data Handling Mode to Frame-based. 
+% The data segments are contiguous, so set both the frame size 
+% and frame rate to 0.21 seconds
+
